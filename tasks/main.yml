@@ -17,6 +17,7 @@
   template: src=ntp.conf.j2 dest=/etc/ntp.conf
   notify:
   - restart ntp
+  when: ntp_config_install == 'yes'
   tags: [ 'configuration', 'package', 'ntp' ]
 
 - name: Start/stop ntp service
